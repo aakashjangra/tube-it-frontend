@@ -52,3 +52,19 @@ export const registerUser = async(data) => {
 
   return res;
 }
+
+export const logoutUser = async () => {
+  const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/users/logout`, {
+    headers: { Authorization: `Bearer ${localStorage.getItem("accessToken")}` },
+  }).then((response) => {return response})
+  .catch((error) => {
+    console.log(error)
+    return null;
+  })  
+
+  res?.data.success && localStorage.removeItem("accessToken");
+  res?.data.success && localStorage.removeItem("refreshToken");
+  res?.data.success && localStorage.removeItem("user");
+
+  return res;
+}

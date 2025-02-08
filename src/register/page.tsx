@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Input } from "../components/ui/input";
-import { Button } from "../components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { registerUser } from "../utils/user.api";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Label } from "@/components/ui/label";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -72,13 +73,14 @@ export default function Register() {
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
-                <label htmlFor="username" className="sr-only">
+                <Label htmlFor="username" className="sr-only">
                   Username
-                </label>
+                </Label>
                 <Input
                   id="username"
                   name="username"
                   type="text"
+                  required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
                   placeholder="Username"
                   value={username}
@@ -86,28 +88,30 @@ export default function Register() {
                 />
               </div>
               <div>
-                <label htmlFor="fullname" className="sr-only">
+                <Label htmlFor="fullname" className="sr-only">
                   fullname
-                </label>
+                </Label>
                 <Input
                   id="fullname"
                   name="fullname"
                   type="text"
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
+                  required
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
                   placeholder="Full Name"
                   value={fullname}
                   onChange={(e) => setFullname(e.target.value)}
                 />
               </div>
               <div>
-                <label htmlFor="email-address" className="sr-only">
+                <Label htmlFor="email-address" className="sr-only">
                   Email address
-                </label>
+                </Label>
                 <Input
                   id="email-address"
                   name="email"
                   type="email"
                   autoComplete="email"
+                  required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
                   value={email}
@@ -115,14 +119,15 @@ export default function Register() {
                 />
               </div>
               <div>
-                <label htmlFor="password" className="sr-only">
+                <Label htmlFor="password" className="sr-only">
                   Password
-                </label>
+                </Label>
                 <div className="relative">
                   <Input
                     id="password"
                     name="password"
                     type={showPassword ? "text" : "password"}
+                    required
                     className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
                     placeholder="Password"
                     value={password}
@@ -137,22 +142,23 @@ export default function Register() {
                 </div>
               </div>
               <div>
-                <label htmlFor="avatar" className="font-medium my-5">
+                <Label htmlFor="avatar" className="font-medium my-5">
                   Avatar
-                </label>
+                </Label>
                 <input
                   id="avatar"
                   name="avatar"
                   type="file"
                   accept="image/jpeg, image/png, image/gif"
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
+                  required
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
                   onChange={(e) => setAvatar(e.target.files?.[0])}
                 />
               </div>
               <div>
-                <label htmlFor="cover-image" className="font-medium my-5">
+                <Label htmlFor="cover-image" className="font-medium my-5">
                   Cover Image
-                </label>
+                </Label>
                 <input
                   id="cover-image"
                   name="cover-image"
@@ -166,6 +172,7 @@ export default function Register() {
             <div>
               <Button
                 type="submit"
+                variant="custom"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
               >
                 Register

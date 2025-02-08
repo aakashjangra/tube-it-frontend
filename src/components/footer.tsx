@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 
 export function Footer() {
   return (
@@ -9,28 +9,28 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">About</h3>
             <ul className="space-y-2">
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-muted-foreground hover:text-primary"
                 >
                   About Us
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Careers
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Press
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -38,28 +38,28 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Community</h3>
             <ul className="space-y-2">
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Guidelines
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Creators
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Forums
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -67,28 +67,28 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Terms of Service
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Privacy Policy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Copyright
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -96,28 +96,28 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Social</h3>
             <ul className="space-y-2">
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Twitter
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Instagram
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-muted-foreground hover:text-primary"
                 >
                   YouTube
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
